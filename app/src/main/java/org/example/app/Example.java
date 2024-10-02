@@ -1,5 +1,9 @@
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+
+import app.ImageEditor;
+import app.ImageResizer;
+import app.ImageRotator;
 import app.ImageBrightnessAdjuster;
 
 public class Example {

@@ -4,6 +4,11 @@ Med hjälp av denna modulen så kan du redigera bilder även om du bara vill än
 
 ## Användning
 
+Till och börja med så behövs de klasserna som du vill använda importeras så om du exempelvis bara ska använda dig av ImageEditorn och ImageBrightnessAdjuster så görs det med:
+
+    import app.ImageEditor;
+    import app.ImageBrightnessAdjuster;
+
 För att använda en bild så skickar du filvägen till bilden i parametern till ImageEditor när du skapar den och därifrån kan du sedan använda dig av alla andra funktioner.
 
 För att ändra storlek på en bild så får du skapa en ImageResizer som du kan köra resizeImage() på där du som parametrar skickar in din bild (ImageEditor.getImage()), bredden och sedan höjden som du vill att bilden ska vara.
