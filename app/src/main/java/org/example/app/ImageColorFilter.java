@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 public class ImageColorFilter {
 
     // Justerar rgb värderna på bilden.
-    public BufferedImage adjustColor(BufferedImage image, int red, int green, int blue) {
+    public BufferedImage adjustColor(BufferedImage image, float red, float green, float blue) {
         BufferedImage brightenedImage = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
         for (int y = 0; y < image.getHeight(); y++) {
             for (int x = 0; x < image.getWidth(); x++) {

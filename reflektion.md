@@ -1,6 +1,9 @@
 # Reflektion
 
-Jag tyckte först det var rätt så mycket och ha alla funktioner i ImageEditor men efter en stund kändes det krångligare att ha så många olika klasser.
+Jag tyckte först det var rätt så mycket och ha alla funktioner i ImageEditor men efter en stund kändes det krångligare att ha så många olika klasser.  
+En grej jag inte håller med boken om är att man inte ska ha förkortningar på namn utan att man alltid ska vara så tydlig som möjligt. Detta kan jag hålla med om till viss del såklart men tycker att det är lite överdrivet att ALLA variabler ska vara så då det enligt mig blir för långa namn som ska upprepas många gånger vilket kan resultera att koden blir för kladdig. Ett exempel på detta är mina variabler r, g och b som jag själv kan tycka att man borde förstå står för red, green och blue speciellt när jag håller på med bild redigering.  
+En grej jag kan hålla med om från boken är DRY Do not Repeat Yourself som jag försökte hålla mig till så bra som möjligt men när det kom till att lägga till adjustColor() funktionen så är den väldigt lik adjustBrightness() bara att jag multiplicerar alla färger med olika värden istället för samma, detta skulle jag absolut kunnat göra en gemensam funktion för men då jag hade lite ont om tid och inte tyckte det var hela världen så fick det bli så.  
+Att man ska skriva funktioner som "Do One Thing" är absolut väldigt viktigt för att kunna förstå koden men jag tycker även att det kan bli lite jobbigt om man gör alldeles för många funktioner, då funktionen bara ska "göra en grej" blir det ju svårt att säga vad en grej är då man kan behöva flera steg för att göra en grej men jag tycker att mina funktioner gör en grej var rätt så bra.
 
 ## Namngivning
 
