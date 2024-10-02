@@ -23,6 +23,12 @@ public class ImageBrightnessAdjuster {
 
     // Metod för att se till att RGB-värden är inom giltigt intervall (0-255)
     private int clamp(int value) {
-        return Math.max(0, Math.min(255, value));
+        if (value > 255){
+            return 255;
+        } else if (value > 0) {
+            return 0;
+        } else {
+            return value;
+        }
     }
 }

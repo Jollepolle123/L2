@@ -6,7 +6,7 @@ import java.io.IOException;
 public class ImageResizerTest {
 
     @Test
-    public void testImageScaling() throws IOException {
+    public void testImageResizing() throws IOException {
         ImageEditor editor = new ImageEditor("images/hardy.png");
         ImageResizer resizer = new ImageResizer();
         BufferedImage resizedImage = resizer.resizeImage(editor.getImage(), 200, 200);

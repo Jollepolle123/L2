@@ -9,7 +9,7 @@ public class ImageRotatorTest {
     public void testImageRotation() throws IOException {
         ImageEditor editor = new ImageEditor("images/hardy.png");
         ImageRotator rotator = new ImageRotator();
-        BufferedImage rotatedImage = rotator.rotateImage(editor.getImage(), 60);
+        BufferedImage rotatedImage = rotator.rotateImage(editor.getImage(), 45);
 
         assertNotNull(rotatedImage);
     }

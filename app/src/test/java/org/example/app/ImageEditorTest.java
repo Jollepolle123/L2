@@ -15,8 +15,8 @@ public class ImageEditorTest {
     @Test
     public void testImageSaving() throws IOException {
         ImageEditor editor = new ImageEditor("images/hardy.png");
-        editor.saveImage("png", "images/hardy1.png");
-        File file = new File("images/hardy1.png");
+        editor.saveImage("png", "images/hardyTest.png");
+        File file = new File("images/hardyTest.png");
         assertTrue(file.exists());
     }
 }
