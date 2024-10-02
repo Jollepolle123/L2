@@ -5,6 +5,7 @@ import app.ImageEditor;
 import app.ImageResizer;
 import app.ImageRotator;
 import app.ImageBrightnessAdjuster;
+import app.ImageColorFilter;
 
 public class Example {
     public static void main(String[] args) {
@@ -26,6 +27,11 @@ public class Example {
             BufferedImage brightenedImage = brightnessAdjuster.adjustBrightness(editor.getImage(), 1.4f);
             editor.setImage(brightenedImage);
             editor.saveImage("png", "images/hardy3.png");
+
+            ImageColorFilter colorFilter = new ImageColorFilter();
+            BufferedImage filteredImage = colorFilter.adjustColor(editor.getImage(), 1, 0, 1);
+            editor.setImage(filteredImage);
+            editor.saveImage("png", "images/hardy4.png");
             
         } catch (IOException e) {
             e.printStackTrace();

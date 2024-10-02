@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import app.ImageBrightnessAdjuster;
-
+import app.ImageEditor;
 
 public class ImageBrightnessAdjusterTest {
 

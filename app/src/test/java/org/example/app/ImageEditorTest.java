@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import app.ImageEditor;
 
 public class ImageEditorTest {
 
