@@ -6,6 +6,7 @@ import app.ImageResizer;
 import app.ImageRotator;
 import app.ImageBrightnessAdjuster;
 import app.ImageColorFilter;
+import app.NegativeColorConverter;
 
 public class Example {
     public static void main(String[] args) {
@@ -32,6 +33,11 @@ public class Example {
             BufferedImage filteredImage = colorFilter.adjustColor(editor.getImage(), 1, 0, 1);
             editor.setImage(filteredImage);
             editor.saveImage("png", "images/hardy4.png");
+
+            NegativeColorConverter colorConverter = new NegativeColorConverter();
+            BufferedImage convertedImage = colorConverter.convertColors(editor.getImage());
+            editor.setImage(convertedImage);
+            editor.saveImage("png", "images/hardy5.png");
             
         } catch (IOException e) {
             e.printStackTrace();

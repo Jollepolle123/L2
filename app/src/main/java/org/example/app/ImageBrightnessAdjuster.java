@@ -8,6 +8,8 @@ public class ImageBrightnessAdjuster {
     // Justerar ljusstyrkan på bilden
     public BufferedImage adjustBrightness(BufferedImage image, float brightnessFactor) {
         BufferedImage brightenedImage = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
+
+        //Loopar igenom alla pixlar på bilden och multiplicerar deras rgb värden med det värdet som skickats in.
         for (int y = 0; y < image.getHeight(); y++) {
             for (int x = 0; x < image.getWidth(); x++) {
                 Color color = new Color(image.getRGB(x, y));
