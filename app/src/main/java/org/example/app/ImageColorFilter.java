@@ -23,6 +23,7 @@ public class ImageColorFilter {
         return brightenedImage;
     }
 
+    // Metod för att se till att RGB-värden är inom giltigt intervall (0-255)
     private int clamp(int value) {
         if (value > 255){
             return 255;
