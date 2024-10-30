@@ -15,7 +15,7 @@ Att man ska skriva funktioner som "Do One Thing" är absolut väldigt viktigt f�
 | **g** Namn på variabel                | **Use Intention-Revealing Names** Då g bara står för green så är det kanske inte det lättaste att förstå vad jag ska göra med den och skulle kanske därför kallat den för något som beskriver mer vad jag använder den till som är att sätta den nya justerade färgen i ett Color objekt. |
 | **b** Namn på variabel                | **Add Meaningfull Context** Något jag även skulle kunnat gjort var att ge kontext i namnet som gör att andra förstår att r, g och b tillsammans används för att bilda en färg. |
 
-
+En regel från boken som jag kanske inte följde över allt var Use Pronouncable Names då jag har en variabel som heter "hsb" som står för hue, saturation och brightness i klassen ColorSaturator anledningen till detta var för att jag tyckte det skulle bli ett för långt namn och kalla den för "HueSaturationBrightness" eller liknande.
 
 ## Funktioner
 
@@ -28,3 +28,4 @@ Att man ska skriva funktioner som "Do One Thing" är absolut väldigt viktigt f�
 | saveImage()        | 1  | **Small!** Denna funktionen är simpel och kort då allt den gör är att spara ner bilden som just nu är satt. |
 | getImage()         | 1  | **Function Arguments** Funktionen kräver inga argument vilket gör den till en niladic |
 
+Reglen Don't Repeat Yourself är väldigt svår att veta om man ska göra det på absolut allt som går. Jag tycker det kan bli för mycket då man skulle kunna göra funktioner för väldigt många små saker för att inte behöva upprepa sig som exempelvis att förskjuta pixlarnas värde som jag gör i 3 olika funktioner för att få ut rgb värdet tycker jag kan vara lite onödigt då det är så få rader kod.
