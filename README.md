@@ -4,18 +4,29 @@ Med hjälp av denna modulen så kan du redigera bilder även om du bara vill än
 
 ## Features
 
+Bilden jag kommer använda för att visa resultaten ser ut såhär innan den är redigerad:
+
+<img src="images/hardy.png" alt="Picture of result" width="50%"/>
+
+### Editor
+
+ImageEditorn kan du använda om du vill lätt kunna hantera bilderna som redigeras. Den har en funktion setImage() för att sätta en ny bild där parametern är en BufferedImage, en funktion getImage() för att hämta den nuvarande bilden och sedan för att spara ner den nuvarande bilden så används saveImage() där parametrarna båda är en String men den första är vilken typ av bild du vill att den ska sparas ner som och den andra är filvägen till där du vill spara ner bilden tillsammans med namnet på bilden du vill ha i slutet.
+
+    ImageEditor editor = new ImageEditor("images/hardy.png");
+    BufferedImage resizedImage = resizer.resizeImage(editor.getImage(), 600, 600);
+    editor.setImage(resizedImage);
+    editor.saveImage("png", "images/hardy1.png");
+
 ### Resizing
 
 Klassen ImageResizer används för att ändra storlek på bilder. Parametrarna är: bilden som du vill redigera, nya bredden på bilden i pixlar, nya höjden på bilden i pixlar.
 
             ImageResizer resizer = new ImageResizer();
             BufferedImage resizedImage = resizer.resizeImage(editor.getImage(), 600, 600);
-            editor.setImage(resizedImage);
-            editor.saveImage("png", "images/hardy1.png");
 
 Här är ett exempel på hur bilden ser ut efter denna koden:
 
-![Picture of tests](images/hardy1.png)
+<img src="images/hardy1.png" alt="Picture of result" width="50%"/>
 
 ### Rotation
 
@@ -23,98 +34,81 @@ ImageRotator används för att rotera bilder. Parametrarna är: bilden som du vi
 
             ImageRotator rotator = new ImageRotator();
             BufferedImage rotatedImage = rotator.rotateImage(editor.getImage(), 45);
-            editor.setImage(rotatedImage);
-            editor.saveImage("png", "images/hardy2.png");
 
 Här är ett exempel på hur bilden ser ut efter denna koden:
 
-![Picture of tests](images/hardy2.png)
+<img src="images/hardy2.png" alt="Picture of result" width="50%"/>
 
 ### Brightness
 
- Parametrarna är: bilden som du vill redigera, hur mycket du vill multiplicera bildens ljusstyrka med (som float) där 1 då är bildens standard ljusstyrka.
+ImageBrightnessAdjuster är till för att ljustera ljusstyrkan på bilder. Parametrarna är: bilden som du vill redigera, hur mycket du vill multiplicera bildens ljusstyrka med (som float) där 1 då är bildens standard ljusstyrka.
 
             ImageBrightnessAdjuster brightnessAdjuster = new ImageBrightnessAdjuster();
             BufferedImage brightenedImage = brightnessAdjuster.adjustBrightness(editor.getImage(), 1.4f);
-            editor.setImage(brightenedImage);
-            editor.saveImage("png", "images/hardy3.png");
 
 Här är ett exempel på hur bilden ser ut efter denna koden:
 
-![Picture of tests](images/hardy3.png)
+<img src="images/hardy3.png" alt="Picture of result" width="50%"/>
 
 ### Color filters
 
- Parametrarna är: bilden som du vill redigera, hur mycket du vill multiplicera bildens röda färg med (som float) där 1 då är bildens standard färg, hur mycket du vill multiplicera bildens gröna färg med (som float) där 1 då är bildens standard färg, hur mycket du vill multiplicera bildens blåa färg med (som float) där 1 då är bildens standard färg. Kodexemplet under tar då bort all grön färg ur bilden.
+ImageColorFilter används oftast om man vill ta bort en viss färg från en bild eller om man vill att en viss färg ska vara mer tydlig. Parametrarna är: bilden som du vill redigera, hur mycket du vill multiplicera bildens röda färg med (som float) där 1 då är bildens standard färg, hur mycket du vill multiplicera bildens gröna färg med (som float) där 1 då är bildens standard färg, hur mycket du vill multiplicera bildens blåa färg med (som float) där 1 då är bildens standard färg. Kodexemplet under tar då bort all grön färg ur bilden.
 
             ImageColorFilter colorFilter = new ImageColorFilter();
             BufferedImage filteredImage = colorFilter.adjustColor(editor.getImage(), 1f, 0f, 1f);
-            editor.setImage(filteredImage);
-            editor.saveImage("png", "images/hardy4.png");
 
 Här är ett exempel på hur bilden ser ut efter denna koden:
 
-![Picture of tests](images/hardy4.png)
+<img src="images/hardy4.png" alt="Picture of result" width="50%"/>
 
 ### Invert colors
 
- Parametrarna är: bilden som du vill redigera.
+NegativeColorConverter gör så att din bilds färger blir inverterade, exempelvis blir vit färg till svart och grön blir till rosa. Parametrarna är: bilden som du vill redigera.
 
             NegativeColorConverter colorConverter = new NegativeColorConverter();
             BufferedImage convertedImage = colorConverter.convertColors(editor.getImage());
-            editor.setImage(convertedImage);
-            editor.saveImage("png", "images/hardy5.png");
 
 Här är ett exempel på hur bilden ser ut efter denna koden:
 
-![Picture of tests](images/hardy5.png)
+<img src="images/hardy5.png" alt="Picture of result" width="50%"/>
 
 ### Grey scale
 
- Parametrarna är: bilden som du vill redigera.
+GreyScaleImage gör din bild till en färglös bild, med andra ord svartvit. Parametrarna är: bilden som du vill redigera.
 
             GrayScaleImage grayScaler = new GrayScaleImage();
             BufferedImage grayImage = grayScaler.grayScale(editor.getImage());
-            editor.setImage(grayImage);
-            editor.saveImage("png", "images/hardy6.png");
 
 Här är ett exempel på hur bilden ser ut efter denna koden:
 
-![Picture of tests](images/hardy6.png)
+<img src="images/hardy6.png" alt="Picture of result" width="50%"/>
 
 ### Color saturation
 
- Parametrarna är: bilden som du vill redigera, hur mycket "mättnad" du vill ha i bilden mellan 0-100.
+ColorSaturator ändrar "mättnaden" på din bild vilket avgör hur starka färgerna blir. Destå lägre värde du skickar in desto mer grå och färglös blir bilden medans om du väljer ett högre värde så sticker färgerna ut mer. Parametrarna är: bilden som du vill redigera, hur mycket "mättnad" du vill ha i bilden i procent (då 100 är samma värde som bilden redan har).
 
             ColorSaturator colorSaturator = new ColorSaturator();
-            BufferedImage saturatedImage = colorSaturator.saturateImage(editor.getImage(), 60);
-            editor.setImage(saturatedImage);
-            editor.saveImage("png", "images/hardy7.png");
+            BufferedImage saturatedImage = colorSaturator.saturateImage(editor.getImage(), 200);
 
 Här är ett exempel på hur bilden ser ut efter denna koden:
 
-![Picture of tests](images/hardy7.png)
+<img src="images/hardy7.png" alt="Picture of result" width="50%"/>
 
 ## Användning
 
-Till och börja med så behövs de klasserna som du vill använda importeras så om du exempelvis bara ska använda dig av ImageEditorn och ImageBrightnessAdjuster så görs det med:
+För att använda denna modulen så får du börja med att ladda ner mappen [app](https://github.com/Jollepolle123/L2/tree/main/app/src/main/java/org/example/app) (eller bara filerna) och sedan lägga dem i mappen för det projektet du vill använda dem.
+
+Sedan så behövs de klasserna som du vill använda importeras så om du exempelvis ska använda dig av alla funktioner så görs det med:
 
     import app.ImageEditor;
+    import app.ImageResizer;
+    import app.ImageRotator;
     import app.ImageBrightnessAdjuster;
+    import app.ImageColorFilter;
+    import app.NegativeColorConverter;
+    import app.GrayScaleImage;
+    import app.ColorSaturator;
 
-För att använda en bild så skickar du filvägen till bilden i parametern till ImageEditor när du skapar den och därifrån kan du sedan använda dig av alla andra funktioner.
-
-För att ändra storlek på en bild så får du skapa en ImageResizer som du kan köra resizeImage() på där du som parametrar skickar in din bild (ImageEditor.getImage()), bredden och sedan höjden som du vill att bilden ska vara.
-
-För att ändra ljusstyrka så använder du dig av ImageBrightnessAdjuster som du kör adjustBrightness() på där du som parametrar skickar in din bild (ImageEditor.getImage()) och sedan en float på hur stark ljusstyrkan ska multipliceras med. > 1 ökar ljusstyrkan och < 1 minskar den.
-
-Om du vill göra ett eget filter på bilden så använder du dig av ImageColorFilter och kör adjustColor() på din bild där du skickar in parametrarna bilden du vill ändra (ImageEditor.getImage()) och sedan 3 Floats som justerar den röda, gröna och blåa färgen på bilden. Så om du exempelvis bara vill ha en bild med ett rött filter skickar du in (bilden, 1, 0, 0) då den första är Röd den andra är Grön och den tredje Blå.
-
-Om du vill rotera bilden så använder du dig av ImageRotator och kör rotateImage() på den och som parametrar skickar du in din bild (ImageEditor.getImage()) och sedan antalet grader bilden ska roteras med som en int. När du skickar in ett positivt tal så roteras bilden åt höger och om du skickar in ett negativt tal så roteras den åt vänster.
-
-För att sätta en ny bild antingen den du nyss redigerat genom att rotera eller liknande eller om du vill använda dig av en helt ny bild så använder du ImageEditor.setImage() där filvägen till bilden skickas in som parameter.
-
-När du sedan ska spara bilden du redigerat så använder du dig av ImageEditor.saveImage() där du i parametern skickar med vilken typ av bild du vill spara (jpg, png, mm) och filvägen till den nya bilden.
 
 ## Exempel
 

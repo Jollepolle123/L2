@@ -55,7 +55,7 @@ public class Example {
 
             editor.setImage(ImageIO.read(new File("images/hardy.png")));
             ColorSaturator colorSaturator = new ColorSaturator();
-            BufferedImage saturatedImage = colorSaturator.saturateImage(editor.getImage(), 60);
+            BufferedImage saturatedImage = colorSaturator.saturateImage(editor.getImage(), 200);
             editor.setImage(saturatedImage);
             editor.saveImage("png", "images/hardy7.png");
             

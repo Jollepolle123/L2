@@ -4,8 +4,10 @@ import java.awt.image.BufferedImage;
 
 public class GrayScaleImage {
     public BufferedImage grayScale(BufferedImage image) {
+
         int width = image.getWidth(); 
         int height = image.getHeight(); 
+        BufferedImage greyScaledImage = new BufferedImage(width, height, image.getType());
         
         // Tar alla pixlar från bilden och byter ut dem med det genomsnittliga rgb värdet för varje pixel.
         for (int y = 0; y < height; y++) { 
@@ -21,9 +23,9 @@ public class GrayScaleImage {
                 int avg = (r + g + b) / 3;
                 
                 p = (a << 24) | (avg << 16) | (avg << 8) | avg; 
-                image.setRGB(x, y, p); 
+                greyScaledImage.setRGB(x, y, p); 
             } 
         } 
-        return image;
+        return greyScaledImage;
     }
 }

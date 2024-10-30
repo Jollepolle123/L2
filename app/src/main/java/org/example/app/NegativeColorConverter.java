@@ -10,6 +10,7 @@ public class NegativeColorConverter {
 
         int width = image.getWidth(); 
         int height = image.getHeight(); 
+        BufferedImage invertedImage = new BufferedImage(width, height, image.getType());
         
         // Tar alla pixlar från bilden och inverterar färgen genom att ta 255 - det rgb värdet som pixeln redan har.
         for (int y = 0; y < height; y++) { 
@@ -27,9 +28,9 @@ public class NegativeColorConverter {
                 b = 255 - b; 
                 
                 p = (a << 24) | (r << 16) | (g << 8) | b; 
-                image.setRGB(x, y, p); 
+                invertedImage.setRGB(x, y, p); 
             } 
         } 
-        return image;
+        return invertedImage;
     }
 }

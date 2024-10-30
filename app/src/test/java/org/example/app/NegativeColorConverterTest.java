@@ -18,8 +18,8 @@ public class NegativeColorConverterTest {
         Color originalColor = new Color(editor.getImage().getRGB(0, 0));
         Color invertedColor = new Color(invertedImage.getRGB(0, 0));
 
-        assertNotEquals(originalColor.getRed(), brightenedColor.getRed());
-        assertNotEquals(originalColor.getGreen(), brightenedColor.getGreen());
-        assertNotEquals(originalColor.getBlue(), brightenedColor.getBlue());
+        assertNotEquals(originalColor.getRed(), invertedColor.getRed());
+        assertNotEquals(originalColor.getGreen(), invertedColor.getGreen());
+        assertNotEquals(originalColor.getBlue(), invertedColor.getBlue());
     }
 }
