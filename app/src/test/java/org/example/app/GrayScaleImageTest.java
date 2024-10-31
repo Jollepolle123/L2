@@ -29,7 +29,7 @@ public class GrayScaleImageTest {
         GrayScaleImage greyScaler = new GrayScaleImage();
         BufferedImage greyImage = greyScaler.grayScale(editor.getImage());
 
-        // Kontrollera att några pixelvärden har ändrats
+        // Kontrollera att den röda, gröna och blåa färgen har samma värde.
         Color originalColor = new Color(editor.getImage().getRGB(0, 0));
         Color greyColor = new Color(greyImage.getRGB(0, 0));
 
